@@ -69,7 +69,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center"
             >
-              <span className="text-xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              <span className="text-lg font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
                 Samuel Ndambuki
               </span>
             </motion.div>
@@ -83,7 +83,7 @@ export default function Navbar() {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                    className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-xs font-medium transition-colors"
                   >
                     {item.name}
                   </motion.div>
@@ -101,9 +101,9 @@ export default function Navbar() {
                 }
               >
                 {darkMode ? (
-                  <FiSun className="w-5 h-5" />
+                  <FiSun className="w-4 h-4" />
                 ) : (
-                  <FiMoon className="w-5 h-5" />
+                  <FiMoon className="w-4 h-4" />
                 )}
               </motion.button>
             </div>
@@ -119,9 +119,9 @@ export default function Navbar() {
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? (
-                <FiX className="w-6 h-6" />
+                <FiX className="w-5 h-5" />
               ) : (
-                <FiMenu className="w-6 h-6" />
+                <FiMenu className="w-5 h-5" />
               )}
             </motion.button>
           </div>
@@ -144,7 +144,7 @@ export default function Navbar() {
                   <motion.div
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsOpen(false)}
-                    className="text-gray-300 hover:bg-gray-800 hover:text-blue-400 block px-3 py-3 rounded-md text-base font-medium transition-colors"
+                    className="text-gray-300 hover:bg-gray-800 hover:text-blue-400 block px-3 py-3 rounded-md text-sm font-medium transition-colors"
                   >
                     {item.name}
                   </motion.div>
@@ -155,16 +155,16 @@ export default function Navbar() {
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={toggleDarkMode}
-                  className="flex items-center text-gray-300 hover:text-blue-400 px-3 py-3 rounded-md text-base font-medium w-full"
+                  className="flex items-center text-gray-300 hover:text-blue-400 px-3 py-3 rounded-md text-sm font-medium w-full"
                 >
                   {darkMode ? (
                     <>
-                      <FiSun className="w-5 h-5 mr-3" />
+                      <FiSun className="w-4 h-4 mr-3" />
                       Light Mode
                     </>
                   ) : (
                     <>
-                      <FiMoon className="w-5 h-5 mr-3" />
+                      <FiMoon className="w-4 h-4 mr-3" />
                       Dark Mode
                     </>
                   )}
