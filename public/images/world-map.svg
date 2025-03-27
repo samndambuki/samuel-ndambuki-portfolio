@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <path d="M..." fill="none" stroke="#4f46e5" stroke-width="0.5" opacity="0.5" />
+  <!-- Simplified world map paths would go here -->
+  <!-- For a real implementation, you might want to use a proper world map SVG -->
+</svg>
