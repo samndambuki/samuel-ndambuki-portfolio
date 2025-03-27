@@ -74,7 +74,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 mb-4">
             Get In Touch
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
@@ -96,7 +96,7 @@ export default function Contact() {
               <div className="space-y-1">
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-xs font-medium text-gray-300"
                 >
                   Name
                 </label>
@@ -108,7 +108,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 text-sm bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="Your name"
                   />
                   <div className="absolute inset-0 rounded-lg border border-transparent peer-focus:border-blue-500 pointer-events-none transition-all" />
@@ -118,7 +118,7 @@ export default function Contact() {
               <div className="space-y-1">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-xs font-medium text-gray-300"
                 >
                   Email
                 </label>
@@ -130,7 +130,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 text-sm bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="your.email@example.com"
                   />
                   <div className="absolute inset-0 rounded-lg border border-transparent peer-focus:border-blue-500 pointer-events-none transition-all" />
@@ -140,7 +140,7 @@ export default function Contact() {
               <div className="space-y-1">
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-xs font-medium text-gray-300"
                 >
                   Message
                 </label>
@@ -152,7 +152,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 text-sm bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="Your message here..."
                   />
                   <div className="absolute inset-0 rounded-lg border border-transparent peer-focus:border-blue-500 pointer-events-none transition-all" />
@@ -163,7 +163,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full flex items-center justify-center px-6 py-3 rounded-lg font-medium text-white transition-all ${
+                  className={`w-full flex items-center justify-center px-6 py-2 rounded-lg text-sm font-medium text-white transition-all ${
                     isSubmitting
                       ? "bg-gray-600 cursor-not-allowed"
                       : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-lg hover:shadow-blue-500/30"
@@ -173,7 +173,7 @@ export default function Contact() {
                     "Sending..."
                   ) : (
                     <>
-                      <FiSend className="mr-2" />
+                      <FiSend className="mr-2 text-sm" />
                       Send Message
                     </>
                   )}
@@ -184,7 +184,7 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-center"
+                  className="p-3 bg-green-500/10 border border-green-500/30 rounded-lg text-xs text-green-400 text-center"
                 >
                   Message sent successfully! I'll get back to you soon.
                 </motion.div>
@@ -194,7 +194,7 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-center"
+                  className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-xs text-red-400 text-center"
                 >
                   Something went wrong. Please try again or contact me directly
                   via email.
@@ -215,10 +215,10 @@ export default function Contact() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold font-rajdhani text-blue-400">
+              <h3 className="text-xl font-bold font-rajdhani text-blue-400">
                 Contact Information
               </h3>
-              <p className="text-lg text-gray-300">
+              <p className="text-sm text-gray-300">
                 Feel free to reach out through the form or contact me directly
                 via any of these channels.
               </p>
@@ -235,8 +235,8 @@ export default function Contact() {
                   <FiMail className="text-xl" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Email</p>
-                  <p className="text-white font-medium group-hover:text-blue-400 transition-all">
+                  <p className="text-xs text-gray-400">Email</p>
+                  <p className="text-sm text-white font-medium group-hover:text-blue-400 transition-all">
                     samuelndambuki401@gmail.com
                   </p>
                 </div>
@@ -254,8 +254,8 @@ export default function Contact() {
                   <FiLinkedin className="text-xl" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">LinkedIn</p>
-                  <p className="text-white font-medium group-hover:text-blue-400 transition-all">
+                  <p className="text-xs text-gray-400">LinkedIn</p>
+                  <p className="text-sm text-white font-medium group-hover:text-blue-400 transition-all">
                     Samuel Ndambuki
                   </p>
                 </div>
@@ -273,8 +273,8 @@ export default function Contact() {
                   <FiGithub className="text-xl" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">GitHub</p>
-                  <p className="text-white font-medium group-hover:text-blue-400 transition-all">
+                  <p className="text-xs text-gray-400">GitHub</p>
+                  <p className="text-sm text-white font-medium group-hover:text-blue-400 transition-all">
                     @samndambuki
                   </p>
                 </div>
@@ -290,8 +290,8 @@ export default function Contact() {
                   <FiPhone className="text-xl" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Phone</p>
-                  <p className="text-white font-medium group-hover:text-blue-400 transition-all">
+                  <p className="text-xs text-gray-400">Phone</p>
+                  <p className="text-sm text-white font-medium group-hover:text-blue-400 transition-all">
                     +254 797 334 258
                   </p>
                 </div>
@@ -300,7 +300,7 @@ export default function Contact() {
 
             {/* Location */}
             <div className="pt-8">
-              <h4 className="text-lg font-semibold text-white mb-4">
+              <h4 className="text-base font-semibold text-white mb-4">
                 Based in
               </h4>
               <div className="relative h-48 rounded-xl overflow-hidden border border-gray-700/50">
@@ -312,7 +312,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="absolute bottom-4 left-0 right-0 text-center">
-                  <p className="inline-block px-4 py-2 bg-gray-800/80 backdrop-blur-sm rounded-lg text-white font-medium">
+                  <p className="inline-block px-4 py-2 bg-gray-800/80 backdrop-blur-sm rounded-lg text-sm text-white font-medium">
                     Nairobi, Kenya
                   </p>
                 </div>

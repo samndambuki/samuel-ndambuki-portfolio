@@ -70,7 +70,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 mb-4">
             My Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
@@ -149,10 +149,12 @@ export default function Projects() {
 
                   {/* Project content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-lg font-bold text-white mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 mb-4">{project.description}</p>
+                    <p className="text-sm text-gray-300 mb-4">
+                      {project.description}
+                    </p>
 
                     {/* Links */}
                     <div className="flex items-center gap-4 mt-6">
@@ -163,7 +165,7 @@ export default function Projects() {
                         className="flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <FiGithub className="text-lg" />
+                        <FiGithub className="text-base" />
                         <span>View Code</span>
                       </a>
                       {project.demoUrl && (
@@ -174,7 +176,7 @@ export default function Projects() {
                           className="flex items-center gap-2 text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <FiExternalLink className="text-lg" />
+                          <FiExternalLink className="text-base" />
                           <span>Live Demo</span>
                         </a>
                       )}
@@ -193,7 +195,7 @@ export default function Projects() {
                         <motion.div
                           initial={{ scale: 0.9 }}
                           animate={{ scale: 1 }}
-                          className="text-white text-lg font-bold"
+                          className="text-white text-base font-bold"
                         >
                           View Details
                         </motion.div>
@@ -213,10 +215,10 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             className="text-center py-12"
           >
-            <div className="text-2xl text-gray-400 mb-4">No projects found</div>
+            <div className="text-xl text-gray-400 mb-4">No projects found</div>
             <button
               onClick={() => setFilter("all")}
-              className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all"
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-sm text-white font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all"
             >
               Show All Projects
             </button>

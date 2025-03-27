@@ -29,10 +29,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* About */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold font-orbitron text-white">
+            <h3 className="text-base font-bold font-orbitron text-white">
               Samuel Ndambuki
             </h3>
-            <p className="text-gray-400">
+            <p className="text-sm text-gray-400">
               Frontend Engineer specializing in JavaScript, TypeScript, and
               modern web frameworks.
             </p>
@@ -62,7 +62,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold font-orbitron text-white">
+            <h3 className="text-base font-bold font-orbitron text-white">
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -70,7 +70,7 @@ export default function Footer() {
                 <Link href="#about">
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="text-gray-400 hover:text-blue-400 transition-colors flex items-center"
+                    className="text-sm text-gray-400 hover:text-blue-400 transition-colors flex items-center"
                   >
                     <span className="w-1 h-1 rounded-full bg-blue-400 mr-2"></span>
                     About
@@ -81,7 +81,7 @@ export default function Footer() {
                 <Link href="#experience">
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="text-gray-400 hover:text-blue-400 transition-colors flex items-center"
+                    className="text-sm text-gray-400 hover:text-blue-400 transition-colors flex items-center"
                   >
                     <span className="w-1 h-1 rounded-full bg-blue-400 mr-2"></span>
                     Experience
@@ -92,7 +92,7 @@ export default function Footer() {
                 <Link href="#projects">
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="text-gray-400 hover:text-blue-400 transition-colors flex items-center"
+                    className="text-sm text-gray-400 hover:text-blue-400 transition-colors flex items-center"
                   >
                     <span className="w-1 h-1 rounded-full bg-blue-400 mr-2"></span>
                     Projects
@@ -103,7 +103,7 @@ export default function Footer() {
                 <Link href="#contact">
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="text-gray-400 hover:text-blue-400 transition-colors flex items-center"
+                    className="text-sm text-gray-400 hover:text-blue-400 transition-colors flex items-center"
                   >
                     <span className="w-1 h-1 rounded-full bg-blue-400 mr-2"></span>
                     Contact
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold font-orbitron text-white">
+            <h3 className="text-base font-bold font-orbitron text-white">
               Contact
             </h3>
             <ul className="space-y-3">
@@ -123,7 +123,7 @@ export default function Footer() {
                 <FiMail className="text-blue-400 mt-1 mr-3 flex-shrink-0" />
                 <a
                   href="mailto:samuelndambuki401@gmail.com"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  className="text-sm text-gray-400 hover:text-blue-400 transition-colors"
                 >
                   samuelndambuki401@gmail.com
                 </a>
@@ -132,7 +132,7 @@ export default function Footer() {
                 <FiPhone className="text-blue-400 mt-1 mr-3 flex-shrink-0" />
                 <a
                   href="tel:+254797334258"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  className="text-sm text-gray-400 hover:text-blue-400 transition-colors"
                 >
                   +254 797 334 258
                 </a>
@@ -156,10 +156,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} Samuel Ndambuki. All rights reserved.
           </p>
-          <p className="text-gray-500 text-sm mt-4 md:mt-0">
+          <p className="text-xs text-gray-500 mt-4 md:mt-0">
             Built with Next.js, Tailwind CSS, and ❤️
           </p>
         </div>

@@ -42,7 +42,7 @@ export default function Experience() {
   return (
     <section
       ref={ref}
-      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden"
+      className="relative py-12 px-4 sm:px-6 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden"
       id="experience"
     >
       {/* Decorative elements */}
@@ -51,7 +51,7 @@ export default function Experience() {
         <div className="absolute -right-40 -bottom-40 w-80 h-80 rounded-full bg-purple-500 filter blur-3xl opacity-10" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial="hidden"
           animate={controls}
@@ -60,12 +60,12 @@ export default function Experience() {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 mb-3">
             Professional Journey
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
+          <div className="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
         </motion.div>
 
         <div className="relative">
@@ -73,7 +73,7 @@ export default function Experience() {
           <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-gradient-to-b from-blue-500/20 via-purple-500/50 to-blue-500/20" />
 
           {/* Experience items */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {EXPERIENCE.map((exp, index) => (
               <motion.div
                 key={exp.id}
@@ -88,37 +88,37 @@ export default function Experience() {
               >
                 {/* Timeline dot */}
                 <div
-                  className={`absolute top-6 left-4 w-4 h-4 rounded-full border-4 border-blue-500 bg-gray-900 z-10 transform -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 ${
-                    index === expandedIndex ? "ring-4 ring-blue-500/30" : ""
+                  className={`absolute top-6 left-4 w-3 h-3 rounded-full border-3 border-blue-500 bg-gray-900 z-10 transform -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 ${
+                    index === expandedIndex ? "ring-3 ring-blue-500/30" : ""
                   }`}
                 />
 
                 <div
-                  className={`ml-10 md:ml-0 md:w-1/2 ${
+                  className={`ml-8 md:ml-0 md:w-1/2 ${
                     index % 2 === 0
-                      ? "md:mr-auto md:pr-10 md:pl-0"
-                      : "md:ml-auto md:pl-10 md:pr-0"
+                      ? "md:mr-auto md:pr-8 md:pl-0"
+                      : "md:ml-auto md:pl-8 md:pr-0"
                   }`}
                 >
                   <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className={`bg-gray-800/50 backdrop-blur-sm rounded-xl border ${
+                    whileHover={{ scale: 1.01 }}
+                    className={`bg-gray-800/50 backdrop-blur-sm rounded-lg border ${
                       index === expandedIndex
-                        ? "border-blue-500/50 shadow-lg shadow-blue-500/10"
+                        ? "border-blue-500/50 shadow-md shadow-blue-500/10"
                         : "border-gray-700/50"
                     } overflow-hidden transition-all cursor-pointer`}
                     onClick={() => toggleExpand(index)}
                   >
-                    <div className="p-6">
+                    <div className="p-4">
                       <div className="flex justify-between items-start">
                         <div>
-                          <h3 className="text-xl font-bold text-white">
+                          <h3 className="text-lg font-bold text-white">
                             {exp.role}
                           </h3>
-                          <p className="text-blue-400">{exp.company}</p>
+                          <p className="text-sm text-blue-400">{exp.company}</p>
                         </div>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-sm text-gray-400 bg-gray-700/50 px-2 py-1 rounded">
+                        <div className="flex items-center space-x-1">
+                          <span className="text-xs text-gray-400 bg-gray-700/50 px-2 py-0.5 rounded">
                             {exp.period}
                           </span>
                           <motion.span
@@ -127,7 +127,7 @@ export default function Experience() {
                             }}
                             transition={{ duration: 0.3 }}
                           >
-                            <FiChevronDown className="text-gray-400" />
+                            <FiChevronDown className="text-gray-400 text-sm" />
                           </motion.span>
                         </div>
                       </div>
@@ -143,21 +143,21 @@ export default function Experience() {
                               collapsed: { opacity: 0, height: 0 },
                             }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="mt-4"
+                            className="mt-3"
                           >
-                            <div className="space-y-4">
-                              <ul className="list-disc pl-5 space-y-2 text-gray-300">
+                            <div className="space-y-3">
+                              <ul className="list-disc pl-4 space-y-1 text-sm text-gray-300">
                                 {exp.description.map((item, i) => (
                                   <li key={i}>{item}</li>
                                 ))}
                               </ul>
 
-                              <div className="pt-2">
-                                <div className="flex flex-wrap gap-2">
+                              <div className="pt-1">
+                                <div className="flex flex-wrap gap-1">
                                   {exp.technologies.map((tech, i) => (
                                     <span
                                       key={i}
-                                      className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+                                      className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
                                     >
                                       {tech}
                                     </span>
@@ -185,52 +185,68 @@ export default function Experience() {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20"
+          className="mt-12"
         >
-          <h3 className="text-2xl md:text-3xl font-bold font-rajdhani text-center text-blue-400 mb-8">
+          <h3 className="text-xl sm:text-2xl font-bold font-rajdhani text-center text-blue-400 mb-6">
             Technologies I've Worked With
           </h3>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {[
               {
                 name: "JavaScript",
-                icon: <SiJavascript className="text-yellow-400" />,
+                icon: <SiJavascript className="text-yellow-400 text-xl" />,
               },
               {
                 name: "TypeScript",
-                icon: <SiTypescript className="text-blue-500" />,
+                icon: <SiTypescript className="text-blue-500 text-xl" />,
               },
-              { name: "React", icon: <SiReact className="text-blue-400" /> },
+              {
+                name: "React",
+                icon: <SiReact className="text-blue-400 text-xl" />,
+              },
               {
                 name: "Next.js",
-                icon: <SiNextdotjs className="text-black dark:text-white" />,
+                icon: (
+                  <SiNextdotjs className="text-black dark:text-white text-xl" />
+                ),
               },
-              { name: "Angular", icon: <SiAngular className="text-red-500" /> },
+              {
+                name: "Angular",
+                icon: <SiAngular className="text-red-500 text-xl" />,
+              },
               {
                 name: "Tailwind CSS",
-                icon: <SiTailwindcss className="text-cyan-400" />,
+                icon: <SiTailwindcss className="text-cyan-400 text-xl" />,
               },
               {
                 name: "Node.js",
-                icon: <SiNodedotjs className="text-green-500" />,
+                icon: <SiNodedotjs className="text-green-500 text-xl" />,
               },
               {
                 name: "Express.js",
                 icon: (
-                  <SiExpress className="text-gray-800 dark:text-gray-200" />
+                  <SiExpress className="text-gray-800 dark:text-gray-200 text-xl" />
                 ),
               },
-              { name: "SQL", icon: <SiPostgresql className="text-blue-600" /> },
-              { name: "Git", icon: <SiGit className="text-orange-500" /> },
+              {
+                name: "SQL",
+                icon: <SiPostgresql className="text-blue-600 text-xl" />,
+              },
+              {
+                name: "Git",
+                icon: <SiGit className="text-orange-500 text-xl" />,
+              },
               {
                 name: "Angular Material",
-                icon: <MdOutlineDesignServices className="text-blue-400" />,
+                icon: (
+                  <MdOutlineDesignServices className="text-blue-400 text-xl" />
+                ),
               },
             ].map((tech, index) => (
               <motion.div
                 key={tech.name}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
                 initial="hidden"
                 animate="visible"
@@ -239,12 +255,12 @@ export default function Experience() {
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 border border-gray-700/50 flex flex-col items-center hover:border-blue-500/30 transition-all"
+                className="bg-gray-800/50 backdrop-blur-sm rounded-md p-3 border border-gray-700/50 flex flex-col items-center hover:border-blue-500/30 transition-all"
               >
-                <div className="w-12 h-12 mb-3 text-3xl flex items-center justify-center">
+                <div className="w-8 h-8 mb-2 text-xl flex items-center justify-center">
                   {tech.icon}
                 </div>
-                <span className="text-sm font-medium text-white text-center">
+                <span className="text-xs font-medium text-white text-center">
                   {tech.name}
                 </span>
               </motion.div>
