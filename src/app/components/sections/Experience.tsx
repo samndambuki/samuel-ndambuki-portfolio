@@ -8,7 +8,20 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { EXPERIENCE } from "@/lib/constants";
-import { FiChevronDown, FiExternalLink } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiAngular,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiPostgresql,
+  SiGit,
+} from "react-icons/si";
+import { MdOutlineDesignServices } from "react-icons/md";
 
 export default function Experience() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
@@ -180,16 +193,40 @@ export default function Experience() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {[
-              { name: "JavaScript", icon: "js" },
-              { name: "TypeScript", icon: "ts" },
-              { name: "React", icon: "react" },
-              { name: "Next.js", icon: "next" },
-              { name: "Angular", icon: "angular" },
-              { name: "Tailwind CSS", icon: "tailwind" },
-              { name: "Node.js", icon: "node" },
-              { name: "Express.js", icon: "express" },
-              { name: "SQL", icon: "sql" },
-              { name: "Git", icon: "git" },
+              {
+                name: "JavaScript",
+                icon: <SiJavascript className="text-yellow-400" />,
+              },
+              {
+                name: "TypeScript",
+                icon: <SiTypescript className="text-blue-500" />,
+              },
+              { name: "React", icon: <SiReact className="text-blue-400" /> },
+              {
+                name: "Next.js",
+                icon: <SiNextdotjs className="text-black dark:text-white" />,
+              },
+              { name: "Angular", icon: <SiAngular className="text-red-500" /> },
+              {
+                name: "Tailwind CSS",
+                icon: <SiTailwindcss className="text-cyan-400" />,
+              },
+              {
+                name: "Node.js",
+                icon: <SiNodedotjs className="text-green-500" />,
+              },
+              {
+                name: "Express.js",
+                icon: (
+                  <SiExpress className="text-gray-800 dark:text-gray-200" />
+                ),
+              },
+              { name: "SQL", icon: <SiPostgresql className="text-blue-600" /> },
+              { name: "Git", icon: <SiGit className="text-orange-500" /> },
+              {
+                name: "Angular Material",
+                icon: <MdOutlineDesignServices className="text-blue-400" />,
+              },
             ].map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -204,12 +241,10 @@ export default function Experience() {
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
                 className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 border border-gray-700/50 flex flex-col items-center hover:border-blue-500/30 transition-all"
               >
-                <div className="w-12 h-12 mb-3 flex items-center justify-center">
-                  <div
-                    className={`w-10 h-10 bg-[url('/images/tech-icons/${tech.icon}.svg')] bg-contain bg-no-repeat bg-center`}
-                  />
+                <div className="w-12 h-12 mb-3 text-3xl flex items-center justify-center">
+                  {tech.icon}
                 </div>
-                <span className="text-sm font-medium text-white">
+                <span className="text-sm font-medium text-white text-center">
                   {tech.name}
                 </span>
               </motion.div>

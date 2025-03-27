@@ -275,7 +275,7 @@ export default function Contact() {
                 <div>
                   <p className="text-sm text-gray-400">GitHub</p>
                   <p className="text-white font-medium group-hover:text-blue-400 transition-all">
-                    @sanmdambuki
+                    @samndambuki
                   </p>
                 </div>
               </motion.a>

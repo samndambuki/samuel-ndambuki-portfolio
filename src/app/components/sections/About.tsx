@@ -123,48 +123,63 @@ export default function About() {
           <h3 className="text-2xl md:text-3xl font-bold font-rajdhani text-center text-blue-400 mb-8">
             My Skills Galaxy
           </h3>
-          <div className="relative h-64 sm:h-80 md:h-96">
+
+          <div className="relative h-[400px] w-full max-w-md mx-auto">
+            {" "}
+            {/* Increased height and fixed width */}
+            {/* Center "SKILLS" indicator */}
+            <div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                   w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-purple-700 
+                   flex items-center justify-center text-white font-bold shadow-xl z-0"
+            >
+              SKILLS
+            </div>
+            {/* Skills orbiting around */}
             {SKILLS.map((skill, index) => {
+              // Calculate position in orbit
               const angle = (index * (2 * Math.PI)) / SKILLS.length;
-              const distance = 0.4 + (skill.level / 100) * 0.3;
-              const x = Math.cos(angle) * distance * 100;
-              const y = Math.sin(angle) * distance * 100;
-              const size = 8 + (skill.level / 100) * 16;
+              const radius = 150; // Fixed radius instead of percentage
+              const x = Math.cos(angle) * radius;
+              const y = Math.sin(angle) * radius;
+              const size = 10 + (skill.level / 100) * 30; // More noticeable size difference
 
               return (
                 <motion.div
                   key={skill.name}
-                  initial={{ opacity: 0, scale: 0 }}
+                  initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
                   animate={{
                     opacity: 1,
                     scale: 1,
-                    x: `${x}%`,
-                    y: `${y}%`,
+                    x: x,
+                    y: y,
                   }}
                   transition={{
                     duration: 0.6,
                     delay: 0.8 + index * 0.05,
                     type: "spring",
+                    stiffness: 100,
                   }}
-                  whileHover={{ scale: 1.2 }}
-                  className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-medium text-xs shadow-lg cursor-pointer group`}
+                  whileHover={{ scale: 1.3 }}
+                  className={`absolute top-1/2 left-1/2 rounded-full bg-gradient-to-br 
+                     from-blue-500 to-purple-600 flex items-center justify-center 
+                     text-white font-medium shadow-lg cursor-pointer group z-10`}
                   style={{
                     width: `${size}px`,
                     height: `${size}px`,
                   }}
                 >
                   <div className="absolute -inset-1 rounded-full bg-blue-500/20 group-hover:animate-ping" />
-                  <span className="absolute -bottom-8 whitespace-nowrap text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span
+                    className="absolute -bottom-8 whitespace-nowrap text-xs opacity-0 
+                         group-hover:opacity-100 transition-opacity duration-300
+                         bg-gray-900/90 px-2 py-1 rounded"
+                  >
                     {skill.name} ({skill.level}%)
                   </span>
                 </motion.div>
               );
             })}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center text-white font-bold shadow-xl">
-                SKILLS
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>
