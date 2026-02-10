@@ -15,7 +15,7 @@
     "@types/three": "^0.174.0",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.6.2",
-    "next": "15.2.4",
+    "next": "^16.1.6",
     "next-fonts": "^1.5.1",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
