@@ -1,19 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { FiSend, FiMail, FiLinkedin, FiGithub, FiPhone } from "react-icons/fi";
+import { FiMail, FiLinkedin, FiGithub, FiPhone } from "react-icons/fi";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
   const controls = useAnimation();
@@ -23,33 +14,6 @@ export default function Contact() {
       controls.start("visible");
     }
   }, [isInView, controls]);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      // Replace with your form submission logic
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    }
-  };
 
   return (
     <section
@@ -82,113 +46,6 @@ export default function Contact() {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Contact Form - Always appears first on mobile */}
-          <motion.div
-            initial="hidden"
-            animate={controls}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-1/2 bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 shadow-lg"
-          >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-1">
-                <label
-                  htmlFor="name"
-                  className="block text-xs font-medium text-gray-300"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 text-sm bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label
-                  htmlFor="email"
-                  className="block text-xs font-medium text-gray-300"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 text-sm bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label
-                  htmlFor="message"
-                  className="block text-xs font-medium text-gray-300"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 text-sm bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  placeholder="Your message here..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full mt-4 py-2 rounded-lg text-sm font-medium text-white transition-all ${
-                  isSubmitting
-                    ? "bg-gray-600 cursor-not-allowed"
-                    : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-md hover:shadow-blue-500/20"
-                }`}
-              >
-                {isSubmitting ? (
-                  "Sending..."
-                ) : (
-                  <span className="flex items-center justify-center">
-                    <FiSend className="mr-2" /> Send Message
-                  </span>
-                )}
-              </button>
-
-              {submitStatus === "success" && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="mt-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg text-xs text-green-400 text-center"
-                >
-                  Message sent successfully!
-                </motion.div>
-              )}
-
-              {submitStatus === "error" && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="mt-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-xs text-red-400 text-center"
-                >
-                  Something went wrong. Please try again.
-                </motion.div>
-              )}
-            </form>
-          </motion.div>
 
           {/* Contact Info - Appears second on mobile */}
           <motion.div
@@ -199,7 +56,7 @@ export default function Contact() {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="w-full lg:w-1/2 space-y-6"
+            className="w-full space-y-6"
           >
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 shadow-lg">
               <h3 className="text-lg font-bold font-rajdhani text-blue-400 mb-4">

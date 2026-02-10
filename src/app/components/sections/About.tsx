@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { SKILLS } from "@/lib/constants";
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -58,7 +57,7 @@ export default function About() {
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-blue-400/30 shadow-md shadow-blue-500/10" />
             <div className="relative z-10 w-full h-full flex items-center justify-center">
               <img
-                src="/images/samndambuki.jpeg"
+                src="/images/samndambuki.jpg"
                 alt="Samuel Ndambuki"
                 className="w-40 h-40 lg:w-48 lg:h-48 object-cover rounded-full border-2 border-blue-400/30"
               />
@@ -82,12 +81,17 @@ export default function About() {
                 Professional Summary
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
-                I'm a front-end engineer specializing in JavaScript, TypeScript,
-                Angular, React, Next.js, Tailwind CSS, and Angular Material.
-              </p>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                My work emphasizes clean, maintainable code and seamless user
-                experiences.
+                Software Engineer with over 2 years of experience building and
+                maintaining enterprise applications, primarily on the frontend
+                using Angular. Currently working at Smart Applications
+                International on the Smart Insure product, where I contribute to
+                developing scalable, user-focused solutions. I have hands-on
+                experience with relational databases including MySQL and SQL
+                Server, version control using Git, and containerization with
+                Docker. I am a collaborative problem-solver with a strong
+                interest in delivering high-quality, secure software and
+                continuously expanding my technical skills. My work emphasizes
+                clean, maintainable code and seamless user experiences.
               </p>
             </div>
 
@@ -110,75 +114,6 @@ export default function About() {
             </div>
           </motion.div>
         </div>
-
-        {/* Skills Galaxy */}
-        <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1 },
-          }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-8"
-        >
-          <h3 className="text-lg font-bold font-rajdhani text-center text-blue-400 mb-4">
-            My Skills Galaxy
-          </h3>
-
-          <div className="relative h-[250px] w-full max-w-xs mx-auto">
-            <div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                   w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-purple-700
-                   flex items-center justify-center text-white font-bold shadow z-0 text-xs"
-            >
-              SKILLS
-            </div>
-            {SKILLS.map((skill, index) => {
-              const angle = (index * (2 * Math.PI)) / SKILLS.length;
-              const radius = 80;
-              const x = Math.cos(angle) * radius;
-              const y = Math.sin(angle) * radius;
-              const size = 6 + (skill.level / 100) * 20;
-
-              return (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    x: x,
-                    y: y,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.8 + index * 0.05,
-                    type: "spring",
-                    stiffness: 100,
-                  }}
-                  whileHover={{ scale: 1.15 }}
-                  className={`absolute top-1/2 left-1/2 rounded-full bg-gradient-to-br
-                     from-blue-500 to-purple-600 flex items-center justify-center
-                     text-white font-medium shadow-sm cursor-pointer group z-10`}
-                  style={{
-                    width: `${size}px`,
-                    height: `${size}px`,
-                  }}
-                >
-                  <div className="absolute -inset-0.5 rounded-full bg-blue-500/20 group-hover:animate-ping" />
-                  <span
-                    className="absolute -bottom-6 whitespace-nowrap text-[9px] opacity-0
-                         group-hover:opacity-100 transition-opacity duration-300
-                         bg-gray-900/90 px-1 py-0.5 rounded"
-                  >
-                    {skill.name} ({skill.level}%)
-                  </span>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ export default function Footer() {
               Samuel Ndambuki
             </h3>
             <p className="text-sm text-gray-400">
-              Frontend Engineer specializing in JavaScript, TypeScript, and
+              Softwarer Engineer specializing in JavaScript, TypeScript, and
               modern web frameworks.
             </p>
             <div className="flex space-x-4">
@@ -160,7 +160,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Samuel Ndambuki. All rights reserved.
           </p>
           <p className="text-xs text-gray-500 mt-4 md:mt-0">
-            Built with Next.js, Tailwind CSS, and ❤️
+            Built with Next.js, Tailwind CSS.
           </p>
         </div>
       </div>

@@ -89,23 +89,6 @@ export default function Navbar() {
                   </motion.div>
                 </Link>
               ))}
-
-              {/* Dark mode toggle */}
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={toggleDarkMode}
-                className="text-gray-300 hover:text-blue-400 p-2 rounded-full focus:outline-none"
-                aria-label={
-                  darkMode ? "Switch to light mode" : "Switch to dark mode"
-                }
-              >
-                {darkMode ? (
-                  <FiSun className="w-4 h-4" />
-                ) : (
-                  <FiMoon className="w-4 h-4" />
-                )}
-              </motion.button>
             </div>
           </div>
 

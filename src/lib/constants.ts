@@ -1,31 +1,52 @@
 export const EXPERIENCE = [
   {
     id: 1,
-    role: "Frontend Engineer",
+    role: "Software Engineer",
+    company: "Smart Applications International",
+    period: "June 2025 - Present",
+    description: [
+      "Developed and maintained frontend features for the Smart Insure platform using Angular, supporting core insurance workflows such as product configuration, quotations, and role-based access control",
+      "Built and enhanced reusable UI components to improve usability, consistency, and delivery speed across the application",
+      "Collaborated with backend, QA, and product teams to integrate APIs, troubleshoot issues, and deliver reliable, user-focused solutions",
+      "Refactored existing components and optimised frontend performance, improving application stability and maintainability",
+      "Ensured adherence to coding standards, data security practices, and version control processes through active participation in code reviews",
+    ],
+    technologies: [
+      "Angular",
+      "TypeScript",
+      "JavaScript",
+      "MySQL",
+      "SQL Server",
+      "Git",
+      "Docker",
+    ],
+  },
+  {
+    id: 2,
+    role: "Softawre Engineer",
     company: "Revenue Catalyst",
-    period: "February 2024 - Present",
+    period: "February 2024 - May 2025",
     description: [
       "RevCat v2: Implemented and optimized the second version of the RevCat platform using Next.js and Tailwind CSS",
       "Built an administrative interface to manage platform tenants, streamlining user onboarding and account operations",
       "Contributed to Covecta (UK-based Startup): Developed front-end features and enhancements for AI banking helpers",
       "Leveraged modern JavaScript/TypeScript practices across all projects",
       "Ensured responsive UI/UX and maintained clean, maintainable code",
-    ],
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "React"],
-  },
-  {
-    id: 2,
-    role: "Frontend Engineer Intern",
-    company: "Revenue Catalyst",
-    period: "November 2023 - January 2024",
-    description: [
       "Knowledge Base Development: Created a system to collect and organize company information for the RevCat platform",
       "Assisted in feature implementation and platform enhancements",
       "Gained hands-on experience with Angular and Angular Material",
       "Strengthened proficiency in front-end best practices and component-driven design",
       "Developed responsive UI/UX implementations",
     ],
-    technologies: ["Angular", "Angular Material", "TypeScript", "JavaScript"],
+    technologies: [
+      "Angular",
+      "Angular Material",
+      "Javascript",
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "React",
+    ],
   },
   {
     id: 3,
@@ -69,6 +90,64 @@ export const PROJECTS = [
   },
   {
     id: 2,
+    title: "Online Shoe Shop",
+    description:
+      "An e-commerce web application for browsing, selecting, and purchasing shoes with a clean and responsive user interface.",
+    technologies: ["Angular", "TypeScript", "CSS", "REST API"],
+    githubUrl: "https://github.com/samndambuki/online-shoe-shop",
+    demoUrl: "#",
+    image: "/images/projects/shoe-shop.jpg",
+    features: [
+      "Product listing and detailed product views",
+      "Shopping cart functionality",
+      "Responsive UI for multiple devices",
+      "Dynamic data rendering from APIs",
+    ],
+  },
+  {
+    id: 3,
+    title: "Stack Overflow Clone",
+    description:
+      "A Q&A platform inspired by Stack Overflow, enabling users to ask questions, post answers, and interact with technical content.",
+    technologies: ["Angular", "TypeScript", "Node.js", "SQL"],
+    githubUrl: "https://github.com/samndambuki/stack-overflow.git",
+    demoUrl: "#",
+    image: "/images/projects/stack-overflow-clone.jpg",
+    features: [
+      "Question and answer posting",
+      "User interaction through comments and votes",
+      "Structured data handling with SQL",
+      "Clean, component-based frontend architecture",
+    ],
+  },
+  {
+    id: 4,
+    title: "Online Code Compiler",
+    description:
+      "A web-based code compiler that allows users to write, compile, and execute code in multiple programming languages through a browser interface.",
+    technologies: [
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "Docker",
+      "REST API",
+    ],
+    githubUrl: [
+      "https://github.com/samndambuki/code-zap-frontend",
+      "https://github.com/samndambuki/code-zap-api",
+    ],
+    demoUrl: "#",
+    image: "/images/projects/code-compiler.jpg",
+    features: [
+      "Online code editor with execution support",
+      "Backend API for code compilation and execution",
+      "Docker-based containerization for isolated runtimes",
+      "Frontend-backend integration via REST APIs",
+    ],
+  },
+  {
+    id: 5,
     title: "Movie App",
     description:
       "Browse popular movies with details, ratings, and search functionality",
@@ -84,7 +163,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 3,
+    id: 6,
     title: "Social Network Wall",
     description: "A social media-style wall application with user interactions",
     technologies: ["Angular", "Angular Material", "json-server"],
@@ -99,7 +178,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     title: "Eshop",
     description:
       "An e-commerce platform with product listings and cart functionality",
@@ -115,7 +194,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     title: "Recipe Finder Web App",
     description: "Application for discovering and saving cooking recipes",
     technologies: ["Angular", "json-server", "Tailwind CSS"],

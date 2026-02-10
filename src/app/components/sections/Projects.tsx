@@ -11,7 +11,7 @@ import { PROJECTS } from "@/lib/constants";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 type Project = (typeof PROJECTS)[0];
-type Filter = "all" | "react" | "angular" | "typescript" | "nextjs";
+type Filter = "all" | "react" | "angular" | "typescript";
 
 export default function Projects() {
   const [filter, setFilter] = useState<Filter>("all");
@@ -54,10 +54,9 @@ export default function Projects() {
 
   const filters: { id: Filter; label: string }[] = [
     { id: "all", label: "All" },
-    { id: "react", label: "React" },
     { id: "angular", label: "Angular" },
+    { id: "react", label: "React" },
     { id: "typescript", label: "TS" },
-    { id: "nextjs", label: "Next.js" },
   ];
 
   return (

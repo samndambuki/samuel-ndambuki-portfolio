@@ -44,12 +44,10 @@ export default function Hero() {
         <div className="text-base sm:text-lg md:text-xl font-medium mb-6">
           <Typewriter
             texts={[
-              "Frontend Engineer",
+              "Software Engineer",
               "JavaScript Developer",
               "TypeScript Expert",
               "Angular Specialist",
-              "React Developer",
-              "Next.js Engineer",
             ]}
             delay={100}
           />
